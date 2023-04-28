@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/splashToSignIn"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/splashToMain"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/mainToSignIn"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/mainToDetails"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/mainToBasket"
+            app:destination="@id/basketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.SignInFragment"
+        android:label="SignInFragment">
+        <action
+            android:id="@+id/signInToSignUp"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/signInToMain"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.SignUpFragment"
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/signUpToSignIn"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.DetailsFragment"
+        android:label="DetailsFragment">
+        <argument
+            android:name="food"
+            app:argType="com.mtc.finalproject_bootcamp.model.Food" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.BasketFragment"
+        android:label="BasketFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.mtc.finalproject_bootcamp.ui.fragments.FavoritesFragment"
+        android:label="FavoritesFragment">
+        <action
+            android:id="@+id/favoritesToDetails"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+</navigation>

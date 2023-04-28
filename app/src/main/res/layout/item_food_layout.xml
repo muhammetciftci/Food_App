@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="food"
+            type="com.mtc.finalproject_bootcamp.model.Food" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/foodImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/priceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/top_right_radius_background"
+                    android:backgroundTint="@color/theme_blue_dark"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10sp"
+                    android:text="@{String.valueOf(food.foodPrice) + ` ₺`}"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/foodImageView"
+                    android:layout_marginHorizontal="10dp"
+                    android:padding="2dp"
+                    android:text="@{food.foodName}"
+                    android:textColor="@color/theme_blue_dark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/bottom_and_top_left_radius_background"
+                    android:backgroundTint="#FFD700"
+                    android:gravity="center"
+                    android:paddingHorizontal="5dp"
+                    android:text="4.5"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:textStyle="normal"
+                    app:drawableStartCompat="@drawable/evaluation_star"
+                    app:drawableTint="@color/white" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/addImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:src="@drawable/add_icon" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/theme_blue_dark" />
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/favoriteToggleButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="8dp"
+            android:background="@drawable/favorite_default_icon"
+            android:checked="false"
+            android:textOff=""
+            android:textOn="" />
+
+    </androidx.cardview.widget.CardView>
+</layout>
